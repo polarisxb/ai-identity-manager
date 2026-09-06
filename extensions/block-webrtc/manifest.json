@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Identity Keeper WebRTC Blocker",
+  "version": "1.0.0",
+  "description": "Blocks WebRTC APIs to prevent proxy bypass IP leaks.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    }
+  ]
+}

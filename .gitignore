@@ -1,0 +1,60 @@
+# Secrets — never commit these
+proxy-secret.local
+*.local
+*.local.md
+identity.local.yaml
+.env
+.env.*
+
+# Clash Verge recovery snapshots (contain secrets + live profile)
+recovery-kit/
+
+# Runtime state written by the CLI
+.ai-identity/
+
+# Local probe / reputation dumps
+tester-results/
+probe-logs*/
+run-logs/
+browser-profile/
+
+# Internal design, specs, plans — keep on disk, do not publish
+/docs/architecture/
+/docs/superpowers/
+/docs/dashboard-prototype/
+/docs/ai-identity-manager-design.md
+/docs/ai-identity-manager-green-loop-design.md
+/docs/clash-rule-mode.zh-CN.md
+
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+/bin/
+/dist/
+/out/
+/tmp/
+
+# Logs and coverage
+*.log
+*.out
+coverage.out
+coverage.html
+*.coverprofile
+
+# Go
+vendor/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+*.code-workspace

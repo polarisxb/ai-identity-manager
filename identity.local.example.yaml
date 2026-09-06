@@ -1,0 +1,34 @@
+identity:
+  name: ai-static-iproyal
+  expected_exit_ip: ""
+  expected_asn: ""
+  expected_country: ""
+
+iproyal:
+  # proxy-secret.local should include CONTROLLER_SECRET=<mihomo external controller secret>.
+  secret_file: proxy-secret.local
+  proxy_mode: http
+  node_name: IPRoyal-Static
+
+clash:
+  app_dir: "%APPDATA%/io.github.clash-verge-rev.clash-verge-rev"
+  runtime_config: clash-verge.yaml
+  mixed_port: "127.0.0.1:7889"
+  controller: "127.0.0.1:9097"
+  # Windows named pipe fallback used when TCP external-controller is unavailable.
+  controller_pipe: '\\.\pipe\verge-mihomo'
+  final_group: AI-Static
+  bootstrap_group: JMS-Bootstrap
+
+bootstrap:
+  switch_after_failures: 3
+
+watch:
+  poll_interval: 5s
+  verify_interval: ""
+
+killswitch:
+  enabled: true
+  block_udp: true
+  appx: "*Claude*"
+  globs: "%LOCALAPPDATA%/AnthropicClaude/app-*/claude.exe"
